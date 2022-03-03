@@ -45,9 +45,14 @@ namespace EckTechGames.PlagueGun
                      * the localization section.
                      */
 
-                    Messages.Message(
-                        "TST_PlagueBullet_SuccessMessage".Translate(new object[] { this.launcher.Label, hitPawn.Label}), 
-                        MessageTypeDefOf.NegativeHealthEvent);
+                    //Messages.Message(
+                    //    "TST_PlagueBullet_SuccessMessage".Translate(new object[] { this.launcher.Label, hitPawn.Label }),
+                    //    MessageTypeDefOf.NegativeHealthEvent);
+
+                    
+
+                    string translatedMessage = TranslatorFormattedStringExtensions.Translate("ECK_PlagueBullet_SuccessMessage", launcher.Label, hitPawn.Label, Def.HediffToAdd.label);
+                    Messages.Message(translatedMessage, MessageTypeDefOf.NegativeHealthEvent);
 
                     //This checks to see if the character has a heal differential, or hediff on them already.
                     var plagueOnPawn = hitPawn?.health?.hediffSet?.GetFirstHediffOfDef(Def.HediffToAdd);
@@ -74,7 +79,9 @@ namespace EckTechGames.PlagueGun
                      * Dust plumes, symbol bubbles, and text messages floating next to characters.
                      * This mote makes a small text message next to the character.
                      */
-                    MoteMaker.ThrowText(hitThing.PositionHeld.ToVector3(), hitThing.MapHeld, "TST_PlagueBullet_FailureMote".Translate(Def.AddHediffChance), 12f);
+                    //MoteMaker.ThrowText(hitThing.PositionHeld.ToVector3(), hitThing.MapHeld, "TST_PlagueBullet_FailureMote".Translate(Def.AddHediffChance), 12f);
+                    string translatedMessage = TranslatorFormattedStringExtensions.Translate("ECK_PlagueBullet_FailureMote", Def.AddHediffChance.ToString("P"));
+                    MoteMaker.ThrowText(hitThing.PositionHeld.ToVector3(), hitThing.MapHeld, translatedMessage, 2f);
                 }
             }
         }

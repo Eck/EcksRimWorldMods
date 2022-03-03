@@ -14,13 +14,13 @@ namespace EckTechGames.PlagueGun
     /// </summary>
     public class ThingDef_PlagueBullet : ThingDef
     {
-        public float AddHediffChance = 1f; //The default chance of adding a hediff.
+        public float AddHediffChance = 0.5f; //The default chance of adding a hediff.
         public HediffDef HediffToAdd;
 
-        public override void ResolveReferences()
-        {
-            base.ResolveReferences();
-            HediffToAdd = HediffDefOf.Plague;
-        }
+        //public override void ResolveReferences()
+        //{
+        //    base.ResolveReferences();
+        //    HediffToAdd = HediffDefOf.Plague; // Instead of hardcoding this to plague going to drive it solely from the data.
+        //}
     }
 }
