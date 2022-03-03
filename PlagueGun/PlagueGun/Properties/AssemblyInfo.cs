@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PlagueGun")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Eck's PlagueGun")]
+[assembly: AssemblyDescription("Plague Gun created from Jercell's tutorial: https://ludeon.com/forums/index.php?topic=33219.0")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("EckTech Games")]
 [assembly: AssemblyProduct("PlagueGun")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ff0ccbc5-1aa3-41f5-85c5-2758e6570792")]
+[assembly: Guid("7f874629-1f65-47bc-94cc-e7cc8ee8afb8")]
 
 // Version information for an assembly consists of the following four values:
 //
