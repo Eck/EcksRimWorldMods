@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Eck's - Plague Gun</name>
+	<author>Eck</author>
+	<packageId>EckTechGames.PlagueGun.0001</packageId>
+	<supportedVersions>
+		<li>1.3</li>
+	</supportedVersions>
+	<description>V1.0
+    This mod adds a plague gun, a weapon that has a chance to give your enemies the plague. Special thanks to Jecrell for making this tutorial!
+	I worked through the issues and have updated it to RimWorld version 1.3.
+	https://ludeon.com/forums/index.php?topic=33219.0</description>
+</ModMetaData>
+
+
+

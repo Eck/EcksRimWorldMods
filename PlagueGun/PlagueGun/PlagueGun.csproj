@@ -59,5 +59,20 @@
   <ItemGroup>
     <None Include="README.md" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ModData\About\About.xml" />
+    <Content Include="ModData\About\Preview.png" />
+    <Content Include="ModData\Defs\PlagueGunDefs.xml" />
+    <Content Include="ModData\Languages\English\Keyed\PlagueGun_Keys.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>set PlagueGunPath="E:\SteamLibrary\steamapps\common\RimWorld\Mods\PlagueGun"
+
+if not exist %25PlagueGunPath%25 mkdir %25PlagueGunPath%25
+if not exist %25PlagueGunPath%25\Assemblies mkdir %25PlagueGunPath%25\Assemblies
+
+xcopy $(ProjectDir)ModData %25PlagueGunPath%25 /s /y</PreBuildEvent>
+  </PropertyGroup>
 </Project>
