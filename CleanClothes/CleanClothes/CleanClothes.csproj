@@ -60,8 +60,5 @@
     <Compile Include="SpecialThingFilterWorker_UnDamagedApparel.cs" />
     <Compile Include="SpecialThingFilterWorker_DamagedApparel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="README.md" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
