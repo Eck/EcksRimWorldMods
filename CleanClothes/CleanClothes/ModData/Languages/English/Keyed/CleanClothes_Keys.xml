@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <ECK_CleanClothes_Cleaned>I just cleaned the {0}!</ECK_CleanClothes_Cleaned>
+  <ECK_CleanClothes_RepairApparel>Repaired {0} by {1} percent.</ECK_CleanClothes_RepairApparel>
+  <ECK_CleanClothes_FullyRepaired>FullyRepaired {0}.</ECK_CleanClothes_FullyRepaired>
+</LanguageData>
+

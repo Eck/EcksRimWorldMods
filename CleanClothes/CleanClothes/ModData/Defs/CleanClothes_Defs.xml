@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef>
+    <defName>CleanClothes</defName>
+    <label>clean clothes</label>
+	<workerClass>EckTechGames.CleanClothes.CleanClothesWorker</workerClass>
+    <description>Remove the tainted status of apparel.</description>
+    <jobString>Cleaning apparel.</jobString>
+    <workAmount>60</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <requiredGiverWorkType>Hauling</requiredGiverWorkType>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Apparel</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ECK_Soap</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Apparel</li>
+      </categories>
+      <specialFiltersToDisallow>
+	    <li>AllowNonDeadmansApparel</li>
+        <li>AllowNonBurnableApparel</li>
+      </specialFiltersToDisallow>
+    </fixedIngredientFilter>
+    <forceHiddenSpecialFilters>
+      <li>AllowDeadmansApparel</li>
+      <li>AllowBurnableApparel</li>
+      <li>AllowNonBurnableApparel</li>
+      <li>AllowSmeltableApparel</li>
+      <li>AllowNonSmeltableApparel</li>
+    </forceHiddenSpecialFilters>
+    <defaultIngredientFilter>
+      <categories>
+        <li>Apparel</li>
+      </categories>
+    </defaultIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef Class="EckTechGames.CleanClothes.RepairApparelRecipeDef" >
+    <defName>RepairApparel</defName>
+    <label>repair apparel</label>
+	<workerClass>EckTechGames.CleanClothes.RepairApparelWorker</workerClass>
+    <description>Repairs apparel by a small amount.</description>
+    <jobString>Repairing apparel.</jobString>
+    <workAmount>60</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <requiredGiverWorkType>Crafting</requiredGiverWorkType>
+    <effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Apparel</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Apparel</li>
+      </categories>
+      <specialFiltersToDisallow>
+	    <li>AllowUnDamagedApparel</li>
+      </specialFiltersToDisallow>
+    </fixedIngredientFilter>
+    <forceHiddenSpecialFilters>
+	  <li>AllowUnDamagedApparel</li>
+    </forceHiddenSpecialFilters>
+    <defaultIngredientFilter>
+      <categories>
+        <li>Apparel</li>
+      </categories>
+    </defaultIngredientFilter>
+  </RecipeDef>
+
+
+  <SpecialThingFilterDef>
+    <defName>AllowDamagedApparel</defName>
+    <label>allow apparel that is damaged</label>
+    <description>Allow apparel that has some damage.</description>
+    <parentCategory>Apparel</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowDamagedApparel</saveKey>
+    <workerClass>EckTechGames.CleanClothes.SpecialThingFilterWorker_DamagedApparel</workerClass>
+  </SpecialThingFilterDef>
+
+  <SpecialThingFilterDef>
+    <defName>AllowUnDamagedApparel</defName>
+    <label>allow apparel that is undamaged</label>
+    <description>Allow apparel that has NO damage.</description>
+    <parentCategory>Apparel</parentCategory>
+    <allowedByDefault>true</allowedByDefault>
+    <saveKey>allowUnDamagedApparel</saveKey>
+    <workerClass>EckTechGames.CleanClothes.SpecialThingFilterWorker_UnDamagedApparel</workerClass>
+  </SpecialThingFilterDef>
+
+
+  <ThingDef ParentName="ResourceBase" Name="ECK_SoapBase" Abstract="True">
+    <thingClass>EckTechGames.CleanClothes.Soap</thingClass>
+    <stackLimit>75</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <!--<orderedTakeGroup>Medicine</orderedTakeGroup>-->
+  </ThingDef>
+
+  <ThingDef ParentName="ECK_SoapBase">
+    <defName>ECK_Soap</defName>
+    <label>soap</label>
+    <description>A bar of soap used for cleaning tainted apparel.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Medicine/MedicineIndustrial</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.50</drawSize>
+    </graphicData>
+    <techLevel>Neolithic</techLevel>
+    <statBases>
+      <MarketValue>10</MarketValue>
+      <Mass>0.10</Mass>
+      <Flammability>0.3</Flammability>
+      <DeteriorationRate>3</DeteriorationRate>
+      <WorkToMake>40</WorkToMake>
+    </statBases>
+    <costList> <!-- TODO - Fix recipe so it takes wood and meat! -->
+      <MedicineHerbal>1</MedicineHerbal>
+      <WoodLog>5</WoodLog>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>CookSpeed</workSpeedStat>
+      <workSkill>Cooking</workSkill>
+      <recipeUsers>
+        <li>Campfire</li>
+        <li>FueledStove</li>
+        <li>ElectricStove</li>
+      </recipeUsers>
+      <researchPrerequisite>ECK_SoapMaking</researchPrerequisite>
+      <skillRequirements>
+        <Cooking>3</Cooking>
+      </skillRequirements>
+    </recipeMaker>
+    <!--<allowedArchonexusCount>10</allowedArchonexusCount>-->
+  </ThingDef>
+ 
+  <ResearchProjectDef>
+    <defName>ECK_SoapMaking</defName>
+    <label>soap making</label>
+    <description>The ability to create soap for washing tainted clothes.</description>
+    <baseCost>50</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tags>
+      <li>TribalStart</li>
+    </tags>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>5.00</researchViewY>
+  </ResearchProjectDef>
+  
+  </Defs>
+
+<!-- Need a soap item -->
+<!-- Need a C# soap class -->
+<!-- Need a recipe for soap -->
+
+<!--
+ResourceBase?
+Apparel
+  <ThingDef Name="ApparelMakeableBase" ParentName="ApparelBase" Abstract="True">
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <recipeUsers>
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Root</li>
+        </categories>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Apparel_TribalA</defName>
+    <label>tribalwear</label>
+    <description>A full-body garment crafted using neolithic tools. While it may look primitive, it is effective at insulating the wearer.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/TribalA/TribalA</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <techLevel>Neolithic</techLevel>
+    <costStuffCount>60</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <tradeability>Sellable</tradeability>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>1800</WorkToMake>
+      <Mass>0.5</Mass>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.55</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.55</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/TribalA/TribalA</wornGraphicPath>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <tags>
+        <li>Neolithic</li>
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <recipeMaker>
+      <recipeUsers>
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+        <li>CraftingSpot</li>
+      </recipeUsers>
+    </recipeMaker>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.4,0.3,0.15)</only>
+        </li>
+        <li>
+          <weight>15</weight>
+          <only>(0.6,0.45,0.18)</only>
+        </li>
+        <li>
+          <weight>20</weight>
+          <only>(0.8,0.6,0.23)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+  
+  <ThingDef ParentName="HatMakeableBase" Name="CowboyHat">
+    <defName>Apparel_CowboyHat</defName>
+    <label>cowboy hat</label>
+    <description>Stylish yet rugged, this hat keeps the sun and rain off - and it gives anyone who wears it a bit of extra charm. It is the most important part of traditional western attire.</description>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CowboyHat/CowboyHat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.9, 0.9)</drawSize>
+    </graphicData>
+    <costStuffCount>25</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToMake>1800</WorkToMake>
+      <Mass>0.14</Mass>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.10</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.50</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>0.8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <SocialImpact>0.10</SocialImpact>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CowboyHat/CowboyHat</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>IndustrialBasic</li>
+        <li>Western</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Worker</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.9,0.54,0.15,1)</only>
+        </li>
+        <li>
+          <weight>15</weight>
+          <only>(0.9,0.6,0.18,1)</only>
+        </li>
+        <li>
+          <weight>20</weight>
+          <only>(0.9,0.42,0.23,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+Stone Blocks 
+  <RecipeDef ParentName="MakeStoneBlocksBase">
+    <defName>Make_StoneBlocksAny</defName>
+    <label>make any stone blocks</label>
+    <description>Cut rock chunks into usable stone blocks.</description>
+    <workerCounterClass>RecipeWorkerCounter_MakeStoneBlocks</workerCounterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>StoneChunks</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>StoneChunks</li>
+      </categories>
+    </fixedIngredientFilter>
+    <specialProducts>
+      <li>Butchery</li>
+    </specialProducts>
+  </RecipeDef>
+  
+  <ThingDef ParentName="ResourceBase">
+    <defName>AIPersonaCore</defName>
+    <label>persona core</label>
+    <description>A hyper-advanced computer core that houses a peak-human-equivalent machine persona. In its isolated state, the core is dormant. Installed in a proper support structure, however, it can become a mind of great power.</description>
+    <graphicData>
+      <texPath>Things/Item/Special/AIPersonaCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>4000</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>2</Mass>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <tradeability>Sellable</tradeability>
+    <techLevel>Ultra</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+
+
+
+  <ThingDef ParentName="ResourceBase" Name="MedicineBase" Abstract="True">
+    <thingClass>Medicine</thingClass>
+    <stackLimit>25</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+    </statBases>
+    <thingCategories>
+      <li>Medicine</li>
+    </thingCategories>
+    <orderedTakeGroup>Medicine</orderedTakeGroup>
+  </ThingDef>
+
+  <ThingDef ParentName="MedicineBase">
+    <defName>MedicineIndustrial</defName>
+    <label>medicine</label>
+    <description>A kit of industrial-era medical equipment. It contains basic drugs, tools for suturing and bone setting, diagnostic devices, and various pads and fluids.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Medicine/MedicineIndustrial</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <MarketValue>18</MarketValue>
+      <Mass>0.50</Mass>
+      <Flammability>0.7</Flammability>
+      <MedicalPotency>1.00</MedicalPotency>
+      <MedicalQualityMax>1.00</MedicalQualityMax>
+      <DeteriorationRate>2</DeteriorationRate>
+      <WorkToMake>700</WorkToMake>
+    </statBases>
+    <costList>
+      <MedicineHerbal>1</MedicineHerbal>
+      <Neutroamine>1</Neutroamine>
+      <Cloth>3</Cloth>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <researchPrerequisite>MedicineProduction</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+        <Intellectual>4</Intellectual>
+      </skillRequirements>
+    </recipeMaker>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+
+
+
+  <RecipeDef Name="CookMealBase" Abstract="True">
+    <fixedIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <specialFiltersToDisallow>
+        <li>AllowPlantFood</li>
+      </specialFiltersToDisallow>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedCategories>
+        <li>EggsFertilized</li>
+      </disallowedCategories>
+      <disallowedThingDefs>
+        <li>Meat_Human</li>
+        <li>Meat_Megaspider</li>
+        <li>InsectJelly</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef ParentName="CookMealBase">
+    <defName>CookMealSimple</defName>
+    <label>cook simple meal</label>
+    <description>Cook a straightforward meal from one ingredient.</description>
+    <jobString>Cooking simple meal.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>FoodRaw</li>
+          </categories>
+        </filter>
+        <count>0.5</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealSimple>1</MealSimple>
+    </products>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+
+  <ThingDef ParentName="MealFineBase">
+    <defName>MealFine_Meat</defName>
+    <label>carnivore fine meal</label>
+    <description>A complex dish assembled with care from meat ingredients.</description>
+    <graphicData>
+      <texPath>Things/Item/Meal/FineMeat</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Ingredients">
+        <noIngredientsFoodKind>Meat</noIngredientsFoodKind>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <RecipeDef ParentName="CookMealBase">
+    <defName>CookMealSimpleBulk</defName>
+    <label>cook simple meal x4</label>
+    <description>Cook 4 straightforward meals from one ingredient.</description>
+    <jobString>Cooking 4 simple meals.</jobString>
+    <workAmount>1200</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>FoodRaw</li>
+          </categories>
+        </filter>
+        <count>2.0</count>
+      </li>
+    </ingredients>
+    <products>
+      <MealSimple>4</MealSimple>
+    </products>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef Name="CookMealFineBase" ParentName="CookMealBase" Abstract="True">
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <skillRequirements>
+      <Cooking>6</Cooking>
+    </skillRequirements>
+  </RecipeDef>
+
+  <RecipeDef ParentName="CookMealFineBase">
+    <defName>CookMealFine_Meat</defName>
+    <label>cook carnivore fine meal</label>
+    <description>Cook a somewhat complex meal from meat ingredients.</description>
+    <jobString>Cooking carnivore fine meal.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+          </categories>
+        </filter>
+        <count>0.75</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <disallowedCategories>
+        <li>PlantFoodRaw</li>
+        <li>AnimalProductRaw</li>
+      </disallowedCategories>
+    </fixedIngredientFilter>
+    <products>
+      <MealFine_Meat>1</MealFine_Meat>
+    </products>
+  </RecipeDef>
+-->

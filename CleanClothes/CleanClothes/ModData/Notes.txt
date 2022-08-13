@@ -1,0 +1,12 @@
+Clean Clothes Mods
+  - Get fat from an animal corpse? 
+  - Create Soap at a stove/campfire
+	- Wood (ash)
+	- Fat - could just use meat for now
+  - Research job for soap making
+  - Also allow clean apparel job at Tailoring benches
+  - Also allow repair apparel job at Tailoring benches/Crafting benches
+
+
+Maybe Later:
+  - Washboard/cleaning station
