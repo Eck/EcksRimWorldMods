@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Eck's PlagueGun")]
-[assembly: AssemblyDescription("Plague Gun created from Jercell's tutorial: https://ludeon.com/forums/index.php?topic=33219.0")]
+[assembly: AssemblyDescription("Plague Gun created from Jecrell's tutorial: https://ludeon.com/forums/index.php?topic=33219.0")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EckTech Games")]
 [assembly: AssemblyProduct("PlagueGun")]
