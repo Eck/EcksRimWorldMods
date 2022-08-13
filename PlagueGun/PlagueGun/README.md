@@ -4,10 +4,11 @@ A public repo for my learning-to-mod Rim World efforts.
 ## PlagueGun
 I worked through Jecrell's old PlagueGun tutorial mod and updated it for version 1.3 of RimWorld.
 
-TODO: Link to published video
+* [RimWorld Modding Playlist](https://www.youtube.com/watch?v=mbplt3dLVbM&list=PL2M43bS2cfSNisHXDGbN67ByWI3fdVvbI)
+* [How To Mod PlagueGun - Step by Step](https://www.youtube.com/watch?v=UgCOhFzeX4A&list=PL2M43bS2cfSNisHXDGbN67ByWI3fdVvbI&index=2)
 
 ## Build/Deploy Notes
-I automated the build for this project so that when it builds, it copies all the files into the appropriate place. It's hardcoded to build it's dll to MY rimworld directory. That almost certainly won't work for you, so make sure you change that. There are two parts of the deployment script you need to change: The Output Path and the Pre Build Step
+I automated the build for this project so that when it builds, it copies all the files into the appropriate place. It's hardcoded to build its dll to MY rimworld directory. That almost certainly won't work for you, so make sure you change that. There are two parts of the deployment script you need to change: The Output Path and the Pre Build Step
 <ol>
 	<li>In Visual Studio, right click on the project and select properties.</li>
 	<li>Select the Build tab on the left</li>
@@ -25,10 +26,11 @@ I automated the build for this project so that when it builds, it copies all the
 ## Links
 * [EcksRimWorldMods](https://github.com/Eck/EcksRimWorldMods) - Git repo
 * [twitter/Eck314](https://twitter.com/Eck314)
-* [twitch/Eck314](https://www.twitch.tv/Eck314)
-* [youtube/Eck314](https://www.youtube.com/c/Eck314)
+* [twitch/Eck314](https://twitch.tv/Eck314)
+* [youtube/Eck314](https://youtube.com/c/Eck314)
 
 ## Credits
 Jecrell deserves almost all the credit here. I followed his plague gun tutorial and just worked through some of the issues.
 * Original Post: https://ludeon.com/forums/index.php?topic=33219.0
 * Also, he did the original plague gun graphic.
+
