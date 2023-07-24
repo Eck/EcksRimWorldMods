@@ -31,7 +31,7 @@ I automated the build for this project so that when it builds, it copies all the
 
 ## Links
 * [EcksRimWorldMods](https://github.com/Eck/EcksRimWorldMods) - Git repo
-* [My Discord](bit.ly/eck314-Discord)
+* [My Discord](bit.ly/eck314-Discord) - Feel free to come hang out and ask questions.
 * [twitter/Eck314](https://twitter.com/Eck314)
 * [twitch/Eck314](https://twitch.tv/Eck314)
 * [youtube/Eck314](https://youtube.com/c/Eck314)
