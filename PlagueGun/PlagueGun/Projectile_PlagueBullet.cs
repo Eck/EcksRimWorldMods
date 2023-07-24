@@ -21,7 +21,7 @@ namespace EckTechGames.PlagueGun
         #endregion Properties
 
         #region Overrides
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool backedByShield = false)
         {
             base.Impact(hitThing);
 

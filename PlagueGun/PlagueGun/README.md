@@ -7,6 +7,12 @@ I worked through Jecrell's old PlagueGun tutorial mod and updated it for version
 * [RimWorld Modding Playlist](https://www.youtube.com/watch?v=mbplt3dLVbM&list=PL2M43bS2cfSNisHXDGbN67ByWI3fdVvbI)
 * [How To Mod PlagueGun - Step by Step](https://www.youtube.com/watch?v=UgCOhFzeX4A&list=PL2M43bS2cfSNisHXDGbN67ByWI3fdVvbI&index=2)
 
+## Release Notes
+* 1.0 - Mar 03, 2022 
+  - Initial Release
+* 1.1 - Jul 24, 2023 
+  - Corrected mod for use with version 1.4
+
 ## Build/Deploy Notes
 I automated the build for this project so that when it builds, it copies all the files into the appropriate place. It's hardcoded to build its dll to MY rimworld directory. That almost certainly won't work for you, so make sure you change that. There are two parts of the deployment script you need to change: The Output Path and the Pre Build Step
 <ol>
@@ -25,6 +31,7 @@ I automated the build for this project so that when it builds, it copies all the
 
 ## Links
 * [EcksRimWorldMods](https://github.com/Eck/EcksRimWorldMods) - Git repo
+* [My Discord](bit.ly/eck314-Discord)
 * [twitter/Eck314](https://twitter.com/Eck314)
 * [twitch/Eck314](https://twitch.tv/Eck314)
 * [youtube/Eck314](https://youtube.com/c/Eck314)
