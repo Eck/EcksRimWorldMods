@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<LanguageData>
-  <ECK_PlagueBullet_FailureMote>Failure: {0} chance</ECK_PlagueBullet_FailureMote>
-  <ECK_PlagueBullet_SuccessMessage>{0} infected {1} with the {2}!</ECK_PlagueBullet_SuccessMessage>
-</LanguageData>
-
