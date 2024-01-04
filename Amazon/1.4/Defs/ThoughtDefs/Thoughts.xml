@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>AmazonToxGun</defName>
+    <durationDays>0.33</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>i feel terrible</label>
+        <description>I feel overwhelmingly depressed and and can barely stand.</description>
+        <baseMoodEffect>-40</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <DamageDef Name="AMA_StunBase" Abstract="True">
+    <harmsHealth>false</harmsHealth>
+    <makesBlood>false</makesBlood>
+  </DamageDef>
+
+  <DamageDef ParentName="AMA_StunBase">
+    <defName>AmazonStun</defName>
+    <label>Man Catcher Bruise</label>
+    <workerClass>Amazon.MeleeWeapon_ManCatcher</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been beaten to death by a man catcher.</deathMessage>
+    <hediff>Crush</hediff>
+	<hediffSkin>Bruise</hediffSkin>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
+
+	<impactSoundType>Blunt</impactSoundType>
+	<explosionCellFleck>BlastDry</explosionCellFleck>
+    <soundExplosion>Explosion_Stun</soundExplosion>
+    <combatLogRules>Damage_Stun</combatLogRules>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>false</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+  </DamageDef>
+
+
+</Defs>

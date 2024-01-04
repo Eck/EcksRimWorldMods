@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <AM_AmazonMod>Amazons</AM_AmazonMod>
+  <AM_AmazonMod_STR1>Amazon Mod</AM_AmazonMod_STR1>
+  <AM_AmazonMod_STR2>I feel sick</AM_AmazonMod_STR2>
+  <AM_AmazonMod_STR3>Question of loyalty</AM_AmazonMod_STR3>
+  <AM_AmazonMod_STR4>I am beginning to question if the Amazon warriors are right.</AM_AmazonMod_STR4>
+  <AM_AmazonMod_STR5>Males in the colony</AM_AmazonMod_STR5>
+  <AM_AmazonMod_STR6>There are males in our colony and as Amazons we should banish all of the males.</AM_AmazonMod_STR6>
+  <Amazon_Bow_Great>Amazon Wither Bow</Amazon_Bow_Great>
+  <AMAZON_BOW_DESC>A variation on the common greatbow. Fires a heavy arrow long distances. The Amazon variant of this greatbow is capable of inflicting a powerful neurotoxin.</AMAZON_BOW_DESC>
+  <AM_AmazonMod_WEAPON1>Amazon Wither Bow</AM_AmazonMod_WEAPON1>
+  <AM_AmazonMod_OP1>Do Amazon weapons alter the targets age?</AM_AmazonMod_OP1>
+  <AM_AmazonMod_OP2>Do Amazon weapons inflict a neuro toxin?</AM_AmazonMod_OP2>
+  <AM_AmazonMod_OP3>Do Amazon weapons cause mood debuffs?</AM_AmazonMod_OP3>
+  <AM_AmazonMod_OP4>Do Amazon weapons increase doubt in the targets idealogy?</AM_AmazonMod_OP4>
+  <AM_AmazonMod_OP5>Reserved</AM_AmazonMod_OP5>
+</LanguageData>

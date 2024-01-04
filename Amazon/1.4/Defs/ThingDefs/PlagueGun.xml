@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef Class="Amazon.ThingDef_PlagueBullet" ParentName="BaseBullet">
+    <defName>TST_Bullet_PlagueGun</defName>
+    <label>plague bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>2</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <speed>55</speed>
+    </projectile>
+	
+	<AddHediffChance>0.99</AddHediffChance>
+	<HediffToAdd>Plague</HediffToAdd>
+	<thingClass>Amazon.Projectile_PlagueBullet</thingClass>	
+  </ThingDef>
+  
+    <ThingDef Class="Amazon.ThingDef_AmazonArrow" ParentName="BaseProjectileNeolithic">
+    <defName>Arrow_Amazon</defName>
+    <label>amazon arrow</label>
+    <graphicData>
+      <texPath>Things/Projectile/Arrow_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Arrow</damageDef>
+      <damageAmountBase>17</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <speed>49</speed>
+    </projectile>
+	<thingClass>Amazon.Projectile_AmazonArrow</thingClass>	
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWeapon">
+		<defName>AMA_MeleeWeapon_ManCatcher</defName>
+		<label>man catcher</label>
+		<description>A short malevolent stunning weapon developed by the matriarchal slave queens in the Amazon tribes, it inflicts a short electrical stunning effect in the unfortunate recepient. As with all Amazonian weapons the cattle prod inflicts amplified damage to male targets.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/baton</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<relicChance>1</relicChance>
+		<techLevel>Industrial</techLevel>
+		<costList>
+			<Steel>40</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<WorkToMake>8600</WorkToMake>
+			<Mass>0.85</Mass>
+		</statBases>
+		<equippedAngleOffset>-25</equippedAngleOffset>
+		<weaponTags Inherit="False">
+			<li>Melee_Man_Catcher</li>
+		</weaponTags>
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>1.5</cooldownTime>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.5</cooldownTime>
+				<extraMeleeDamages>
+					<li>
+						<def>AmazonStun</def>
+						<amount>32</amount>
+					</li>
+				</extraMeleeDamages>
+			</li>
+		</tools>
+		<recipeMaker>
+			<researchPrerequisite>GasOperation</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>6</Crafting>
+			</skillRequirements>
+			<recipeUsers>
+				<li>TableMachining</li>
+			</recipeUsers>
+		</recipeMaker>
+		<thingCategories>
+			<li>WeaponsMelee</li>
+		</thingCategories>
+		<modExtensions>
+			<li Class="VFECore.ThingDefExtension">
+				<usableWithShields>true</usableWithShields>
+			</li>
+		</modExtensions>
+	</ThingDef>
+  
+  <ThingDef ParentName="BaseWeaponNeolithic">
+    <defName>Amazon_Bow_Great</defName>
+    <label>Amazon Wither Bow</label>
+    <description>A variation on the common greatbow. Fires a heavy arrow long distances. The Amazon variant of this greatbow is capable of inflicting a powerful neurotoxin.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/BowGreat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Bow_Large</soundInteract>
+    <costList>
+      <WoodLog>240</WoodLog>
+    </costList>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>19000</WorkToMake>
+      <Mass>3.0</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.50</AccuracyLong>
+      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
+    </statBases>
+	<weaponTags>
+		<li>AM_Great_Bow</li>
+	</weaponTags>
+    <weaponClasses>
+      <li>Ranged</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Arrow_Amazon</defaultProjectile>
+        <warmupTime>2.0</warmupTime>
+        <range>29.9</range>
+        <soundCast>Bow_Large</soundCast>
+      </li>
+    </verbs>
+	<tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <tools>
+      <li>
+        <label>limb</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <rotateInShelves>false</rotateInShelves>
+  </ThingDef>
+  
+</Defs>

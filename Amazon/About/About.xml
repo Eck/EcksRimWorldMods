@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Amazons</name>
+  <packageId>Slug.Amazon1</packageId>
+  <author>WebSlug</author>
+  <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3001474254</url>
+  <supportedVersions>
+	<li>1.4</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>Ludeon.RimWorld.Royalty</packageId>
+      <displayName>Royalty</displayName>
+      <steamWorkshopUrl>https://store.steampowered.com/app/1149640/RimWorld__Royalty/</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>brrainz.harmony</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>Mlie.KVConfigurableMaps</li>
+		<li>VanillaExpanded.VPsycastsE</li>
+	</loadAfter>
+  <description><![CDATA[
+<size=18><color=#87CEFA>Description</color></size>
+Adds a new potential ally or enemy faction on the map called the Amazons. 
+
+<size=18><color=#87CEFA>Objective</color></size>
+Can you defeat the female supremacist horde of Amazon warriors who are determined to conquer the planet?
+
+<size=18><color=#87CEFA>Requirements</color></size>
+Requires the Royalty and Idealogy DLC to function.
+
+<size=18><color=#87CEFA>Conflicts</color></size>
+None reported so far...
+]]>
+</description></ModMetaData>

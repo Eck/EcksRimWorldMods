@@ -1,0 +1,14 @@
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\PG\Source\PlagueGun\PlagueGun\bin\Release\PlagueGun.dll
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\PG\Source\PlagueGun\PlagueGun\bin\Release\PlagueGun.pdb
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\PG\Source\PlagueGun\PlagueGun\obj\Release\PlagueGun.csproj.AssemblyReference.cache
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\PG\Source\PlagueGun\PlagueGun\obj\Release\PlagueGun.csproj.CoreCompileInputs.cache
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\PG\Source\PlagueGun\PlagueGun\obj\Release\PlagueGun.dll
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\PG\Source\PlagueGun\PlagueGun\obj\Release\PlagueGun.pdb
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\PG\Assemblies\PlagueGun.dll
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\PG\Assemblies\PlagueGun.pdb
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\Amazon\Assemblies\Amazon.dll
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\Amazon\Assemblies\Amazon.pdb
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\Amazon\Source\PlagueGun\PlagueGun\obj\Release\PlagueGun.csproj.AssemblyReference.cache
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\Amazon\Source\PlagueGun\PlagueGun\obj\Release\PlagueGun.csproj.CoreCompileInputs.cache
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\Amazon\Source\PlagueGun\PlagueGun\obj\Release\Amazon.dll
+F:\SteamLibrary\steamapps\common\RimWorld\Mods\Amazon\Source\PlagueGun\PlagueGun\obj\Release\Amazon.pdb

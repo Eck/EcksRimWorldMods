@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef Name="AmazonTrooperBase" Abstract="True" ParentName="AmazonFighterBase">
+    <combatPower>26</combatPower>
+    <apparelMoney>600~800</apparelMoney>
+    <apparelAllowHeadgearChance>0.2</apparelAllowHeadgearChance>
+	<weaponMoney>1200~1200</weaponMoney>
+	<weaponTags>
+	  <li>Autopistol</li>
+	  <li>Gun_PumpShotgun</li>
+	  <li>MeleeWeapon_Gladius</li>
+	  <li>MeleeWeapon_LongSword</li>
+    </weaponTags>
+    <apparelTags>
+      <li>Outlander</li>
+    </apparelTags>
+    <initialWillRange>10~30</initialWillRange>
+  </PawnKindDef>
+
+  <PawnKindDef Name="AmazonFighterBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>Amazon</defaultFactionType>
+    <maxGenerationAge>33</maxGenerationAge>
+    <backstoryCryptosleepCommonality>0.08</backstoryCryptosleepCommonality>
+	<backstoryFilters>
+		<li>
+			<categories>
+				<li>Pirate</li>
+			</categories>
+		</li>
+		<li>
+			<categories>
+				<li>Outlander</li>
+			</categories>
+		</li>
+	</backstoryFilters>
+    <styleItemTags>
+      <li>
+        <tag>Soldier</tag>
+        <baseWeight>1</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+    </styleItemTags>
+    <chemicalAddictionChance>0.1</chemicalAddictionChance>
+    <combatEnhancingDrugsChance>0.15</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
+    <invNutrition>2.55</invNutrition>
+    <itemQuality>Good</itemQuality>
+    <weaponMoney>1200~1200</weaponMoney>
+    <apparelAllowHeadgearChance>0.2</apparelAllowHeadgearChance>
+    <apparelMoney>600~1200</apparelMoney>
+    <apparelTags>
+      <li>Outlander</li>
+    </apparelTags>
+    <apparelDisallowTags>
+      <li>Western</li>
+    </apparelDisallowTags>
+    <specificApparelRequirements>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>OnSkin</apparelLayer>
+        <stuff>Cloth</stuff>
+      </li>
+      <li>
+        <bodyPartGroup>Legs</bodyPartGroup>
+        <apparelLayer>OnSkin</apparelLayer>
+        <stuff>Cloth</stuff>
+      </li>
+    </specificApparelRequirements>
+	<biocodeWeaponChance>0.00</biocodeWeaponChance>
+	<disallowedTraits>
+		<li>Brawler</li>
+		<li>Wimp</li>
+		<li>Pyromaniac</li>
+		<li>BodyPurist</li>
+	</disallowedTraits>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="AmazonTrooperBase">
+    <defName>AmazonFighter</defName>
+    <label>trooper</label>
+    <apparelColor>(0,87,37)</apparelColor>
+	<apparelMoney>600~1200</apparelMoney>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>8~15</range>
+      </li>
+    </skills>
+	<techHediffsChance>0.90</techHediffsChance>
+	<techHediffsMoney>4000~8000</techHediffsMoney>
+	<techHediffsMaxAmount>14</techHediffsMaxAmount>
+    <techHediffsTags>
+      <li>Advanced</li>
+	  <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+	<techHediffsRequired>
+      <li>DeathAcidifier</li>
+	  <li>Painstopper</li>
+	  <li>Amazon_BionicSpine</li>
+	  <li>BionicHeart</li>
+	  <li>BionicEar</li>
+	  <li>BionicEar</li>
+    </techHediffsRequired>
+    <disallowedTraits>
+	  <li>Brawler</li>
+	  <li>Wimp</li>
+	  <li>Pyromaniac</li>
+	  <li>BodyPurist</li>
+    </disallowedTraits>
+    <initialResistanceRange>15~50</initialResistanceRange>
+    <useFactionXenotypes>false</useFactionXenotypes>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0.00</Neanderthal>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.00</Hussar>
+        <Genie MayRequire="Ludeon.RimWorld.Biotech">0.00</Genie>
+		<Sanguophage MayRequire="Ludeon.RimWorld.Biotech">0.00</Sanguophage>
+		<Pigskin MayRequire="Ludeon.RimWorld.Biotech">0.00</Pigskin>
+		<Yttakin MayRequire="Ludeon.RimWorld.Biotech">0.00</Yttakin>
+		<Sanguophage MayRequire="Ludeon.RimWorld.Biotech">0.00</Sanguophage>
+		<Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0.00</Dirtmole>
+		<Highmate MayRequire="Ludeon.RimWorld.Biotech">0.00</Highmate>		
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+  
+</Defs>
