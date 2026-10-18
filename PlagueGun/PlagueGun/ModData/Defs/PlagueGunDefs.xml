@@ -22,9 +22,6 @@
 	<thingClass>EckTechGames.PlagueGun.Projectile_PlagueBullet</thingClass>	
   </ThingDef>
   
-  <defName>TST_PlagueGun_Weapon</defName>
-  <label>plague gun</label>  
-  
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>ECK_Gun_PlagueGun</defName>
     <label>plague gun</label>
