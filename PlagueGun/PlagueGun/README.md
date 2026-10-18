@@ -17,15 +17,14 @@ I worked through Jecrell's old PlagueGun tutorial mod and updated it for version
 I automated the build for this project so that when it builds, it copies all the files into the appropriate place. It's hardcoded to build its dll to MY rimworld directory. That almost certainly won't work for you, so make sure you change that. There are two parts of the deployment script you need to change: The Output Path and the Pre Build Step
 <ol>
 	<li>In Visual Studio, right click on the project and select properties.</li>
-	<li>Select the Build tab on the left</li>
-	<li>Scroll down under Output, and change the Output Path field to the Assemblies folder of your plague gun:
-		<ul>
-			<li>My folder looks like this: (yours will be different)</li>
-			<li>E:\SteamLibrary\steamapps\common\RimWorld\Mods\PlagueGun\Assemblies\</li>
-		</ul>
+	<li>Select the Build Events tab on the left</li>
+	<li>In the Pre-Build event commandline, set the PlagueGunModPath to the folder where you want the mod installed.</li>
+		<ol>
+			<li>My folder looks like this: (yours will probably be different)</li>
+			<li>C:\Games\Steam\steamapps\common\RimWorld\Mods\PlagueGun</li>
+		</ol>
 	</li>
-	<li>Still in the project properties, select the Build Events tab on the left</li>
-	<li>In the Pre-Build event commandline, change the PlagueGunModPath to where you want the mod installed.</li>
+	<li>Do the same thing in the Post-Build event command line window.</li>
 	<li>That should do it. Now when you build the project it should update the dll and xml data in your mod folder. </li>
 </ol>
 
